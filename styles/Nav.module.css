@@ -1,0 +1,6 @@
+.nav {
+    position: fixed;
+    height: 10vh;
+    background-color: aquamarine;
+    width: 100%;
+}
