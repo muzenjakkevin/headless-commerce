@@ -1,6 +1,22 @@
 .nav {
     position: fixed;
-    height: 10vh;
-    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 13vh;
     width: 100%;
+    background-color: #0b3661dc;
+    box-shadow: 0 5px 3px 0px rgba(0,0,0,.2);
+}
+
+.navItems{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    color: white;
+}
+
+.navLinks {
+    padding: 0 1em;
+    font-size: 1.2rem;
 }

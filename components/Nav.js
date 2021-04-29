@@ -4,17 +4,17 @@ import navStyles from '../styles/Nav.module.css'
 const Nav = () => {
   return (
     <nav className={navStyles.nav}>
-      <ul>
-        <li>
+      <ul className={navStyles.navItems}>
+        <li className={navStyles.navLinks}>
           <Link href='/'>Home</Link>
         </li>
-        <li>
+        <li className={navStyles.navLinks}>
           <Link href='/products'>Products</Link>
         </li>
-        <li>
+        <li className={navStyles.navLinks}>
           <Link href='/about'>About</Link>
         </li>
-        <li>
+        <li className={navStyles.navLinks}>
           <Link href='/contact'>Contact</Link>
         </li>
       </ul>
