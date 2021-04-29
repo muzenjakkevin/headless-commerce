@@ -10,21 +10,22 @@
 
 .title {
     position: relative;
-    top: 20em;
-    color: rgb(56, 56, 56);
+    top: 13.5em;
+    color: rgb(255, 255, 255);
     font-weight: 300;
     z-index: 1;
 }
 
-.startpageImage{
+.contactPageImage {
     width: 100%;
 }
 
-.startpageContent{
+.contactPageContent{
+    position: relative;
+    bottom: 3.75em;
     color: rgb(56, 56, 56);
     line-height: 2rem;
     font-weight: 300;
-    margin-bottom: 10em;
     margin-left: 25em;
     width: 50%;
 }

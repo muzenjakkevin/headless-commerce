@@ -25,15 +25,15 @@ export async function getStaticProps() {
 
 export default function Home({ data }) {
   
-  const imageUrl = "https://www.datocms-assets.com/47229/1615990879-img0646.jpg";
+  const homeImageUrl='https://www.datocms-assets.com/47229/1615990879-img0646.jpg';
   return (
     <div>
       <Head>
         <title>Headless Commerce</title>
       </Head>
       <div className={styles.imageContainer}>
-        <h1>{data.startpage.title}</h1>
-        <img className={styles.startpageImage} src={imageUrl} alt=""/>
+        <h1 className={styles.title}>{data.startpage.title}</h1>
+        <img className={styles.startpageImage} src={homeImageUrl} alt=""/>
       </div>
       <div className={styles.startpageContent}>
         <StructuredText data={data.startpage.content}/>
