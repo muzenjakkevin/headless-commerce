@@ -1,11 +1,26 @@
 import Head from 'next/head'
-import {request} from './lib/datocms'
+import { request } from './lib/datocms'
+import { Image } from 'react-datocms'
 import { StructuredText } from 'react-datocms'
 import styles from '../styles/Homepage.module.css'
 
 const STARTPAGE_QUERY = `query {
   startpage{
     title,
+    mainImage {
+      responsiveImage(imgixParams: { fit: crop, w: 2560, h: 1440, auto: format }) {
+        srcSet
+        webpSrcSet
+        sizes
+        src
+        width
+        height
+        aspectRatio
+        alt
+        title
+        base64
+      }
+    },
     content {
       value
     }
@@ -25,15 +40,15 @@ export async function getStaticProps() {
 
 export default function Home({ data }) {
   
-  const homeImageUrl='https://www.datocms-assets.com/47229/1615990879-img0646.jpg';
+  const homeImageUrl=data.startpage.mainImage.responsiveImage;
   return (
     <div>
       <Head>
-        <title>Headless Commerce</title>
+        <title>Headless Commerce | Home</title>
       </Head>
       <div className={styles.imageContainer}>
         <h1 className={styles.title}>{data.startpage.title}</h1>
-        <img className={styles.startpageImage} src={homeImageUrl} alt=""/>
+        <Image className={styles.startpageImage} data={homeImageUrl} alt=""/>
       </div>
       <div className={styles.startpageContent}>
         <StructuredText data={data.startpage.content}/>

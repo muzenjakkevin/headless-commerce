@@ -1,11 +1,26 @@
 import styles from '../styles/About.module.css'
 import {request} from './lib/datocms'
+import { Image } from 'react-datocms'
 import { StructuredText } from 'react-datocms'
 import Head from 'next/head'
 
 const ABOUT_PAGE_QUERY = `query {
   page(filter: {title: {eq: "About"} }){
     title,
+    mainImage {
+      responsiveImage(imgixParams: { fit: crop, w: 2560, h: 1440, auto: format }) {
+        srcSet
+        webpSrcSet
+        sizes
+        src
+        width
+        height
+        aspectRatio
+        alt
+        title
+        base64
+      }
+    },
     content {
       value
     }
@@ -24,9 +39,8 @@ export async function getStaticProps() {
 }
 
 const about = ({ data }) => {
-  console.log(data)
 
-  const aboutImageUrl='https://www.datocms-assets.com/47229/1615992797-jonkopinginnehall-1.jpg';
+  const aboutImageUrl=data.page.mainImage.responsiveImage;
   return (
     <div>
       <Head>
@@ -34,7 +48,7 @@ const about = ({ data }) => {
       </Head>
       <div className={styles.imageContainer}>
         <h1 className={styles.title}>{data.page.title}</h1>
-        <img className={styles.aboutPageImage} src={aboutImageUrl} alt=""/>
+        <Image className={styles.aboutPageImage} data={aboutImageUrl} alt=""/>
       </div>
       <div className={styles.aboutPageContent}>
         <StructuredText data={data.page.content}/>

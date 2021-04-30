@@ -1,11 +1,26 @@
 import styles from '../styles/Contact.module.css'
-import {request} from './lib/datocms'
+import { request } from './lib/datocms'
+import { Image } from 'react-datocms'
 import { StructuredText } from 'react-datocms'
 import Head from 'next/head'
 
 const CONTACT_PAGE_QUERY = `query {
   page(filter: {title: {eq: "Contact"} }){
     title,
+    mainImage {
+      responsiveImage(imgixParams: { fit: crop, w: 2560, h: 1440, auto: format }) {
+        srcSet
+        webpSrcSet
+        sizes
+        src
+        width
+        height
+        aspectRatio
+        alt
+        title
+        base64
+      }
+    }
     content {
       value
     }
@@ -24,9 +39,7 @@ export async function getStaticProps() {
 }
 
 const contact = ({ data }) => {
-  console.log(data)
-
-  const contactImageUrl='https://www.datocms-assets.com/47229/1615992924-mobil-innehall-2.jpg';
+  const contactImageUrl=data.page.mainImage.responsiveImage;
   return (
     <div>
       <Head>
@@ -34,7 +47,7 @@ const contact = ({ data }) => {
       </Head>
       <div className={styles.imageContainer}>
         <h1 className={styles.title}>{data.page.title}</h1>
-        <img className={styles.contactPageImage} src={contactImageUrl} alt=""/>
+        <Image className={styles.contactPageImage} data={contactImageUrl}/>
       </div>
       <div className={styles.contactPageContent}>
         <StructuredText data={data.page.content}/>

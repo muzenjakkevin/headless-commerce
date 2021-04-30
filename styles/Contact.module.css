@@ -4,28 +4,28 @@
     flex-direction: column;
     position: relative;
     z-index: -1;
-    bottom: 10em;
+    bottom: 11em;
     width: 100%;
 }
 
 .title {
     position: relative;
-    top: 13.5em;
+    top: 12.5em;
     color: rgb(255, 255, 255);
+    font-size: 3rem;
     font-weight: 300;
     z-index: 1;
 }
 
 .contactPageImage {
-    width: 100%;
+    width: 100vw;
 }
 
 .contactPageContent{
-    position: relative;
-    bottom: 3.75em;
     color: rgb(56, 56, 56);
     line-height: 2rem;
     font-weight: 300;
+    margin-bottom: 12.5em;
     margin-left: 25em;
     width: 50%;
 }
