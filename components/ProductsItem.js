@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const ProductsItem = ({product}) => {
   return (
-    <Link href="/product/[id]" as={`/product/${product.id}`}>
+    <Link href="/product/[slug]" as={`/product/${product.id}`}>
       <a>
       <Image data={product.mainImage.responsiveImage} />
         <h4>{product.name}</h4>
