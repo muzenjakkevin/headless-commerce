@@ -49,7 +49,6 @@ export default function Home({ data }) {
       <div className={styles.imageContainer}>
         <Image className={styles.startpageImage} data={homeImageUrl} alt=""/>
         <h1 className={styles.title}>{data.startpage.title}</h1>
-        
       </div>
       <div className={styles.startpageContentContainer}>
         <div className={styles.startpageContent}>

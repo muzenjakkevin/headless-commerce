@@ -6,7 +6,6 @@ import { HiOutlineShoppingCart } from 'react-icons/hi'
 import Head from 'next/head'
 import ProductPageImage from '../../components/ProductPageImage'
 
-
 const PRODUCT_ITEM_QUERY = `query ProductPage($id: ItemId){
   product(filter: {id: {eq: $id}}){
     id
@@ -65,7 +64,7 @@ const product = ({ data }) => {
         <title>Headless Commerce | {data.product.name}</title>
       </Head>
       <div className={styles.container}>
-        <div className={styles.imageContent}>
+        <div className={styles.imageContentContainer}>
           <Image style={{border: 'solid 0.5px lightgray', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, .2)'}} data={data.product.mainImage.responsiveImage} />
           <ProductPageImage data={data}/>
         </div>
