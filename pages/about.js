@@ -50,8 +50,10 @@ const about = ({ data }) => {
         <h1 className={styles.title}>{data.page.title}</h1>
         <Image className={styles.aboutPageImage} data={aboutImageUrl} alt=""/>
       </div>
-      <div className={styles.aboutPageContent}>
-        <StructuredText data={data.page.content}/>
+      <div className={styles.aboutPageContentContainer}>
+        <div className={styles.aboutPageContent}>
+          <StructuredText data={data.page.content}/>
+        </div>
       </div>
     </div>
   )

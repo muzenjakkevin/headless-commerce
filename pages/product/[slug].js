@@ -2,8 +2,9 @@ import styles from '../../styles/ProductPage.module.css'
 import { request } from '../lib/datocms'
 import { Image } from 'react-datocms'
 import { StructuredText } from 'react-datocms'
-import { HiOutlineShoppingCart } from 'react-icons/hi' 
+import { HiOutlineShoppingCart } from 'react-icons/hi'
 import Head from 'next/head'
+import ProductPageImage from '../../components/ProductPageImage'
 
 
 const PRODUCT_ITEM_QUERY = `query ProductPage($id: ItemId){
@@ -64,8 +65,9 @@ const product = ({ data }) => {
         <title>Headless Commerce | {data.product.name}</title>
       </Head>
       <div className={styles.container}>
-        <div className={styles.imageContainer}>
+        <div className={styles.imageContent}>
           <Image style={{border: 'solid 0.5px lightgray', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, .2)'}} data={data.product.mainImage.responsiveImage} />
+          <ProductPageImage data={data}/>
         </div>
         <div className={styles.textContainer}>
           <h1>{data.product.name}</h1>

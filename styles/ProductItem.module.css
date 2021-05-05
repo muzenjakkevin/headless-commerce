@@ -1,16 +1,16 @@
 .cardContainer{
     display: grid;
-    padding: 10em 5.7em 7em 0;
+    padding: 10em 3em 10em 0;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 50%;
-    grid-gap: 2em 2em;
+    grid-gap: 1em 1em;
     width: 100%;
 }
 
 .productCard{
     padding: 10px;
-    border: solid 0.5px lightgray;
-    box-shadow: 0 2px 4px 0px rgba(0,0,0,.35);
+    border: solid 0.3px lightgray;
+    /* box-shadow: 0 2px 4px 0px rgba(0,0,0,.2); */
 }
 
 .productId{
@@ -35,7 +35,7 @@
     display: inline-block;
     font-size: 14px;
     margin-left: 3.5em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     cursor: pointer;
     transition-duration: 0.15s;
 }

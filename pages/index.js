@@ -42,16 +42,19 @@ export default function Home({ data }) {
   
   const homeImageUrl=data.startpage.mainImage.responsiveImage;
   return (
-    <div>
+    <div className={styles.container}>
       <Head>
         <title>Headless Commerce | Home</title>
       </Head>
       <div className={styles.imageContainer}>
-        <h1 className={styles.title}>{data.startpage.title}</h1>
         <Image className={styles.startpageImage} data={homeImageUrl} alt=""/>
+        <h1 className={styles.title}>{data.startpage.title}</h1>
+        
       </div>
-      <div className={styles.startpageContent}>
-        <StructuredText data={data.startpage.content}/>
+      <div className={styles.startpageContentContainer}>
+        <div className={styles.startpageContent}>
+          <StructuredText data={data.startpage.content}/>
+        </div>
       </div>
     </div>
   )

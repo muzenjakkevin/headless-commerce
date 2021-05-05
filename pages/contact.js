@@ -49,8 +49,10 @@ const contact = ({ data }) => {
         <h1 className={styles.title}>{data.page.title}</h1>
         <Image className={styles.contactPageImage} data={contactImageUrl}/>
       </div>
-      <div className={styles.contactPageContent}>
-        <StructuredText data={data.page.content}/>
+      <div className={styles.contactPageContentContainer}>
+        <div className={styles.contactPageContent}>
+          <StructuredText data={data.page.content}/>
+        </div>
       </div>
     </div>
   )

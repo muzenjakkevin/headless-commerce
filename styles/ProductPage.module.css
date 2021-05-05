@@ -4,11 +4,12 @@
     margin-bottom: 9em;
     grid-template-columns: 50% 50%;
     grid-template-rows: 100%;
+    grid-gap: 20px;
 }
 
-.imageContainer{
+.imageContent{
     margin: 1em 3em 0 14em;
-    height: 89%;
+    width: 60%;
 }
 
 .textContainer{
