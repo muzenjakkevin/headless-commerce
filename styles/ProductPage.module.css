@@ -12,6 +12,13 @@
     width: 65%;
 }
 
+.alternativeImagesContainer{
+    display: inline-flex;
+    margin-top: 10px;
+    gap: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+}
+
 .textContainer{
     margin-left: 2em;
     font-size: 14px;
