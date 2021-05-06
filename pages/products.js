@@ -24,7 +24,7 @@ const PRODUCT_PAGE_QUERY = `query {
   }
 }`
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const data = await request({
     query: PRODUCT_PAGE_QUERY,
     variables: {limit: 10}

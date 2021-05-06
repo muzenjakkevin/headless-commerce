@@ -1,17 +1,18 @@
 .footer{
     background-color: #0b3661dc;
-    height: 15em;
+    height: 18em;
     width: 100%;
 }
 
 .footerList{
-    padding: 3em 3em;
+    padding: 4em 4em;
     list-style-type: none;
     font-size: 1rem;
     font-weight: 300;
     color: white;
+    float: left;
 }
 
 .footerItem{
-    padding-bottom: 0.3rem;
+    padding-top: 1rem;
 }
