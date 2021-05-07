@@ -5,11 +5,11 @@
 
 .imageContentContainer{
     margin: 1em 3em 0 5em;
-    flex: 0.4;
+    width: 65%;
 }
 
 .selectedImage{
-    flex: 0.6;
+    width: 100%;
 }
 
 .images{
@@ -17,7 +17,7 @@
 }
 
 .alternativeImagesContainer{
-    display: flex;
+    display: inline-flex;
     margin-top: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
 }
