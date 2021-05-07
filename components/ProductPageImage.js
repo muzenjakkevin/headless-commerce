@@ -1,5 +1,4 @@
 import styles from '../styles/ProductPage.module.css'
-import { useEffect, useState } from 'react'
 import { Image } from 'react-datocms'
 
 const ProductPageImage = ({ images, setSelectedImage }) => {
