@@ -1,26 +1,30 @@
 .container{
-    display: grid;
-    margin-top: 11em;
-    margin-bottom: 9em;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100%;
-    grid-gap: 20px;
+    display: flex;
+    margin: 200px 0;
 }
 
 .imageContentContainer{
-    margin: 1em 3em 0 14em;
-    width: 65%;
+    margin: 1em 3em 0 5em;
+    flex: 0.4;
+}
+
+.selectedImage{
+    flex: 0.6;
+}
+
+.images{
+    flex:0.4;
 }
 
 .alternativeImagesContainer{
-    display: inline-flex;
+    display: flex;
     margin-top: 10px;
-    gap: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
 }
 
 .textContainer{
     margin-left: 2em;
+    margin-right: 10em;
     font-size: 14px;
     width: 50%;
 }

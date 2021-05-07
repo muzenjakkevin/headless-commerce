@@ -1,4 +1,5 @@
 import styles from '../../styles/ProductPage.module.css'
+import {useState, useEffect} from 'react'
 import { request } from '../lib/datocms'
 import { Image } from 'react-datocms'
 import { StructuredText } from 'react-datocms'
@@ -57,7 +58,25 @@ return {
 }
 
 const product = ({ data }) => {
-  console.log(data)
+
+  const [images, setImages] = useState([])
+  const [selectedImage, setSelectedImage] = useState({})
+
+  useEffect(() => {
+    const imagesArray = [];
+
+    data.product.alternativeImages.map(imageItem =>
+      imagesArray.push(imageItem)
+    )
+    if (imagesArray.length > 0) {
+      imagesArray.push(data.product.mainImage)
+    } 
+    
+    setImages(imagesArray)
+
+    setSelectedImage(data.product.mainImage.responsiveImage)
+  },[])
+
   return (
     <>
       <Head>
@@ -65,8 +84,8 @@ const product = ({ data }) => {
       </Head>
       <div className={styles.container}>
         <div className={styles.imageContentContainer}>
-          <Image style={{border: 'solid 0.5px lightgray', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, .2)'}} data={data.product.mainImage.responsiveImage} />
-          <ProductPageImage data={data}/>
+          <Image className={styles.selectedImage} style={{border: 'solid 0.5px lightgray', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, .2)'}} data={selectedImage} />
+          <ProductPageImage className={styles.images}  setSelectedImage={setSelectedImage} images={images}/>
         </div>
         <div className={styles.textContainer}>
           <h1>{data.product.name}</h1>

@@ -1,16 +1,18 @@
 import styles from '../styles/ProductPage.module.css'
+import { useEffect, useState } from 'react'
 import { Image } from 'react-datocms'
 
-const ProductPageImage = ({ data }) => {
-
-  console.log(data)
+const ProductPageImage = ({ images, setSelectedImage }) => {
 
   return (
     <div className={styles.alternativeImagesContainer}>
-      {/* <Image data={data.product.mainImage.responsiveImage}/> */}
-      {data.product.alternativeImages.map(imageItem =>
-        <Image style={{width: '50%', justifySelf: 'start',}} key={imageItem.responsiveImage.alt} data={imageItem.responsiveImage}/>
-      )}
+      {images.map((image) => {
+        return (
+          <div key={image.responsiveImage.alt} onClick={() => {setSelectedImage(image.responsiveImage)}}>
+            <Image style={{width: '300px',}} data={image.responsiveImage}/>
+          </div>
+        )
+      })}
     </div>
   )
 }
